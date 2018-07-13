@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TopBarView">
+        <!-- 标题栏背景 图片或颜色 -->
+        <attr name="topBarView_titleBarColor" format="color"/>
+        <!-- 标题栏高度 -->
+        <attr name="topBarView_titleBarHeight" format="dimension"/>
+        <!-- 显示标题栏分割线 -->
+        <attr name="topBarView_showBottomLine" format="boolean"/>
+        <!-- 标题栏分割线颜色 -->
+        <attr name="topBarView_bottomLineColor" format="color"/>
+        <!-- 底部阴影高度 showBottomLine = false时有效 -->
+        <attr name="topBarView_bottomShadowHeight" format="dimension"/>
+    </declare-styleable>
+</resources>
