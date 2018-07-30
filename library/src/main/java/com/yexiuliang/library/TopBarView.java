@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -174,6 +175,20 @@ public class TopBarView extends RelativeLayout {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, getResources().getDisplayMetrics());
     }
 
+    /**
+     * 初始化主视图
+     */
+    private void initContentViews() {
+        mAdapter.notifyDataSetChanged();
+    }
+
+    /**
+     * 获取adapter
+     */
+    @Nullable
+    public BaseTopBarAdapter getAdapter() {
+        return mAdapter;
+    }
 
     public void setAdapter(BaseTopBarAdapter adapter) {
         if (mAdapter != null) {
@@ -188,13 +203,6 @@ public class TopBarView extends RelativeLayout {
             mAdapter = adapter;
             initContentViews();
         }
-    }
-
-    /**
-     * 初始化主视图
-     */
-    private void initContentViews() {
-        mAdapter.notifyDataSetChanged();
     }
 
     private LayoutParams getChildParams(int index) {
